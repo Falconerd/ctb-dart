@@ -1,9 +1,11 @@
 import "./energy.dart";
+import "./controllable.dart";
 
-class Actor {
+class Actor implements Controllable {
   Energy energy = new Energy();
   int energyPerTick;
   String ascii;
+  bool hasSomeValue;
 
   Actor(String ascii, int energyPerTick) {
     this.ascii = ascii;
@@ -11,6 +13,6 @@ class Actor {
   }
 
   update() {
-    this.energy.increase(this.energyPerTick);
+    this.energy.decrease(this.energyPerTick);
   }
 }

@@ -1,5 +1,11 @@
+import "./config.dart" show Config;
+
 class Energy {
   int current = 0;
+
+  Energy() {
+    this.current = Config.ENERGY_PER_TURN;
+  }
 
   void increase(amount) {
     this.current += amount;
@@ -10,6 +16,6 @@ class Energy {
   }
 
   void reset() {
-    this.current = 0;
+    this.current = Config.ENERGY_PER_TURN;
   }
 }
